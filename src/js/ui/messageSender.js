@@ -4,7 +4,7 @@ export default class MessageSender{
         this.messageInput = element.querySelector('[data-role=message-input]');
         this.messageSendButton = element.querySelector('[data-role=message-send-button]');
 
-        messageSendButton.addEventListener('click', ()=>{
+        this.messageSendButton.addEventListener('click', ()=>{
             const message = messageInput.value.trim();
 
             if (message) {
