@@ -5,6 +5,17 @@ const server = http.createServer(async (req, res) => {
   res.end('ok');
 });
 const wss = new Index.Server({ server });
+
+// это вариант с библиотекой io 
+// const app = require('express')();
+// const http = require('http').Server(app);
+// const io = require('socket.io')(http);
+// const port = process.env.PORT || 8282;
+
+// app.get('/', (req, res) => {
+//     res.end('ok');
+// });
+
 const connections = new Map();
 
 wss.on('connection', (socket) => {
@@ -58,3 +69,6 @@ function sendMessageFrom(connections, message, from, excludeSelf) {
 }
 
 server.listen(8282);
+// http.listen(port, () => {
+//     console.log(`Socket.IO server running at http://localhost:${port}/`);
+// });

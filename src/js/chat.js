@@ -9,7 +9,7 @@ import UserList from "./ui/userList"
 export default class Chat {
     constructor() {
         this.WsClient = new WebSocket(
-        `ws://${location.host}/chat/ws`,
+        `ws://localhost:8282/chat/ws`,
         this.onMessage.bind(this),
         )
 
